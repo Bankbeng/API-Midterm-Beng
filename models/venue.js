@@ -1,6 +1,7 @@
+// D:\API-Midterm-Beng\models\venue.js
+
 const mongoose = require('mongoose');
 
-// Define the schema for the Venue
 const venueSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -13,10 +14,8 @@ const venueSchema = new mongoose.Schema({
     capacity: {
         type: Number,
         required: true,
-        min: 1 // Capacity must be a positive number
+        min: 1
     },
-    // The timestamp fields are added automatically by Mongoose
 }, { timestamps: true });
 
-// Export the model, which will create the 'venues' collection in MongoDB
 module.exports = mongoose.model('Venue', venueSchema);

@@ -1,3 +1,5 @@
+// D:\API-Midterm-Beng\models\attendee.js
+
 const mongoose = require('mongoose');
 
 const AttendeeSchema = new mongoose.Schema({
@@ -8,7 +10,7 @@ const AttendeeSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true // Ensures no two attendees have the same email
+        unique: true
     },
 }, { timestamps: true });
 

@@ -1,3 +1,5 @@
+// D:\API-Midterm-Beng\models\event.js
+
 const mongoose = require('mongoose');
 
 const EventSchema = new mongoose.Schema({
@@ -17,16 +19,16 @@ const EventSchema = new mongoose.Schema({
         required: true,
         min: 1
     },
-    // --- RELATIONSHIP FIELD 1: ONE-TO-ONE/FEW (Venue) ---
+    // Relationship to Venue
     venue: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Venue', // Links to the Venue model
+        ref: 'Venue', 
         required: true
     },
-    // --- RELATIONSHIP FIELD 2: ONE-TO-MANY (Attendees) ---
+    // Relationship to Attendees
     attendees: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Attendee' // Links to the Attendee model
+        ref: 'Attendee'
     }]
 }, { timestamps: true });
 
